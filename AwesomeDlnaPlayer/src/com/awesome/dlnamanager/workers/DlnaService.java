@@ -30,6 +30,9 @@ public class DlnaService extends Service implements IBaseEngine,
     public static final String RESET_SEARCH_DEVICES = "com.awesomeDlna.share.reset_search_device";
     public static final String STOP_SERVICE = "com.awesomeDlna.share.stop_self";
     public static final String SEARCH_DEVICES_FAIL = "com.awesomeDlna.share.search_devices_fail";
+    public static final String SEARCH_DEVICES_STATUS = "com.awesomeDlna.share.search_devices_status";
+    public static final String SEARCH_DEVICES_END = "com.awesomeDlna.share.search_devices_end";
+
 
     private static final int NETWORK_CHANGE = 0x0001;
     private boolean firstReceiveNetworkChangeBR = true;
@@ -37,24 +40,10 @@ public class DlnaService extends Service implements IBaseEngine,
 
     private ControlPoint mControlPoint;
 
-    @Override
-    public void onStartComplete(boolean startSuccess) {
-
-    }
-
     private SearchHandlerThread mCenterWorkThread;
     private DlnaMediaProxy mDlnaMediaProxy;
     private Handler mHandler, mWorkerHandler;
 
-    @Override
-    public void onSearchStart() {
-
-    }
-
-    @Override
-    public void onStartInit() {
-
-    }
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -196,11 +185,32 @@ public class DlnaService extends Service implements IBaseEngine,
     }
 
     @Override
-    public void onSearchComplete(boolean searchSuccess) {
+    public void onSearchStart() {
+        sendSearchStatusBroadcast("start");
+    }
 
+    private void sendSearchStatusBroadcast(String status) {
+        Intent intent = new Intent(SEARCH_DEVICES_STATUS);
+        intent.putExtra("status", status);
+        sendBroadcast(intent);
+    }
+
+    @Override
+    public void onStartInit() {
+        sendSearchStatusBroadcast("start");
+    }
+
+    @Override
+    public void onSearchComplete(boolean searchSuccess) {
+        sendSearchStatusBroadcast("end");
         if (!searchSuccess) {
             sendSearchDeviceFailBrocast(this);
         }
+    }
+
+    @Override
+    public void onStartComplete(boolean startSuccess) {
+        sendSearchStatusBroadcast("end");
     }
 
     public static void sendSearchDeviceFailBrocast(Context context) {

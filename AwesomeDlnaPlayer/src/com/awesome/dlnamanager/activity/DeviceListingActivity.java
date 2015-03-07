@@ -1,21 +1,28 @@
 package com.awesome.dlnamanager.activity;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.awesome.dlnamanager.upnp.DummyDevice;
 import com.awesome.dlnamanager.R;
 import com.awesome.dlnamanager.adapter.DeviceAdapter;
 import com.awesome.dlnamanager.proxy.DlnaMediaProxy;
 import com.awesome.dlnamanager.proxy.IDeviceChangeListener;
 import com.awesome.dlnamanager.upnp.DMSDeviceBrocastFactory;
+import com.awesome.dlnamanager.upnp.DummyDevice;
 import com.awesome.dlnamanager.upnp.MediaItemFactory;
+import com.awesome.dlnamanager.workers.DlnaService;
 
 import org.cybergarage.upnp.Device;
 
@@ -32,7 +39,7 @@ public class DeviceListingActivity extends BaseActivity implements IDeviceChange
 
     private DeviceAdapter mSDevAdapter, mRDevAdapter;
     private DlnaMediaProxy mDlnaMediaProxy;
-
+    private BroadcastReceiver mSearchStatus;
     private DMSDeviceBrocastFactory mBrocastFactory;
 
     public void onCreate(Bundle savedInstanceState) {
@@ -44,26 +51,6 @@ public class DeviceListingActivity extends BaseActivity implements IDeviceChange
         mDlnaMediaProxy.startSearch();
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        updateDeviceList();
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-
-    }
-
-    @Override
-    protected void onDestroy() {
-        // m_local_DLNA_server.stop();
-        mDlnaMediaProxy.stopLocalFileServer();
-        mBrocastFactory.unRegisterListener();
-        mDlnaMediaProxy.exitSearch();
-        super.onDestroy();
-    }
 
     private void initView() {
         mServerDevLv = (ListView) findViewById(R.id.device_list_servers);
@@ -157,6 +144,70 @@ public class DeviceListingActivity extends BaseActivity implements IDeviceChange
     private void updateDeviceList() {
         mSDevAdapter.refreshData(mDlnaMediaProxy.getDMSDeviceList());
         mRDevAdapter.refreshData(mDlnaMediaProxy.getDMRDeviceList());
+    }
+
+    private Menu optionsMenu;
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        this.optionsMenu = menu;
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.ic_menu_refresh, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    public void setRefreshActionButtonState(final boolean refreshing) {
+        if (optionsMenu != null) {
+            final MenuItem refreshItem = optionsMenu
+                    .findItem(R.id.airport_menuRefresh);
+            if (refreshItem != null) {
+                if (refreshing) {
+                    refreshItem.setActionView(R.layout.actionbar_indeterminate_progress);
+                } else {
+                    refreshItem.setActionView(null);
+                }
+            }
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        updateDeviceList();
+        if (null == mSearchStatus)
+            mSearchStatus = new BroadcastReceiver() {
+                @Override
+                public void onReceive(Context context, Intent intent) {
+                    String status = intent.getStringExtra("status");
+                    if (status == null)
+                        return;
+                    setRefreshActionButtonState(status.equals("start"));
+                }
+            };
+        registerReceiver(mSearchStatus, new IntentFilter(DlnaService.SEARCH_DEVICES_STATUS));
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.airport_menuRefresh) {
+            mDlnaMediaProxy.resetSearch();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        unregisterReceiver(mSearchStatus);
+    }
+
+    @Override
+    protected void onDestroy() {
+        // m_local_DLNA_server.stop();
+        mDlnaMediaProxy.stopLocalFileServer();
+        mBrocastFactory.unRegisterListener();
+        mDlnaMediaProxy.exitSearch();
+        super.onDestroy();
     }
 
     @Override

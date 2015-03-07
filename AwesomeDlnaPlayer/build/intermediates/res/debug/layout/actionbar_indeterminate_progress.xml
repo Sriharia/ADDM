@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="56dp"
+    android:layout_height="56dp"
+    android:gravity="center">
+
+    <ProgressBar
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_gravity="center"
+        style="?android:attr/indeterminateProgressStyle" />
+</FrameLayout><!-- From: file:/Users/Sri/Documents/DLNA%20project/AwesomeDlnaPlayer/res/layout/actionbar_indeterminate_progress.xml -->

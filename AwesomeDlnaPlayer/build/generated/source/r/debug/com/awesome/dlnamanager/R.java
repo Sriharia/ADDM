@@ -861,6 +861,7 @@ containing a value of this type.
         public static final int action_mode_bar_stub=0x7f09003b;
         public static final int action_mode_close_button=0x7f09002f;
         public static final int activity_chooser_view_content=0x7f090030;
+        public static final int airport_menuRefresh=0x7f090069;
         public static final int always=0x7f09001e;
         public static final int beginning=0x7f09001a;
         public static final int checkbox=0x7f090038;
@@ -980,19 +981,23 @@ containing a value of this type.
         public static final int abc_screen=0x7f030015;
         public static final int abc_search_dropdown_item_icons_2line=0x7f030016;
         public static final int abc_search_view=0x7f030017;
-        public static final int activity_control=0x7f030018;
-        public static final int content_device_listing_header=0x7f030019;
-        public static final int content_layout=0x7f03001a;
-        public static final int content_list_item=0x7f03001b;
-        public static final int device_list_item=0x7f03001c;
-        public static final int dms_layout=0x7f03001d;
-        public static final int file_picker_empty_view=0x7f03001e;
-        public static final int file_picker_list_item=0x7f03001f;
-        public static final int image_display_activity=0x7f030020;
-        public static final int image_viewpager_item_layout=0x7f030021;
-        public static final int list_holder=0x7f030022;
-        public static final int renderer_listitem_layout=0x7f030023;
-        public static final int support_simple_spinner_dropdown_item=0x7f030024;
+        public static final int actionbar_indeterminate_progress=0x7f030018;
+        public static final int activity_control=0x7f030019;
+        public static final int content_device_listing_header=0x7f03001a;
+        public static final int content_layout=0x7f03001b;
+        public static final int content_list_item=0x7f03001c;
+        public static final int device_list_item=0x7f03001d;
+        public static final int dms_layout=0x7f03001e;
+        public static final int file_picker_empty_view=0x7f03001f;
+        public static final int file_picker_list_item=0x7f030020;
+        public static final int image_display_activity=0x7f030021;
+        public static final int image_viewpager_item_layout=0x7f030022;
+        public static final int list_holder=0x7f030023;
+        public static final int renderer_listitem_layout=0x7f030024;
+        public static final int support_simple_spinner_dropdown_item=0x7f030025;
+    }
+    public static final class menu {
+        public static final int ic_menu_refresh=0x7f0d0000;
     }
     public static final class string {
         public static final int Dialog_Button_Cancel=0x7f0b0000;
