@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Awesome Player</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="second">S</string>
+    <string name="separate"> / </string>
+    <string name="init_time">00:00</string>
+    <string name="load_image_fail">"image load fail"</string>
+    <string name="parse_image_fail">"image parse fail"</string>
+    <string name="toast_musicplay_fail">music play error</string>
+    <string name="toast_videoplay_fail">video play error</string>
+    <string name="video_loading">Loading…</string>
+    <string name="video_speed_unit_second">S</string>
+    <string name="buffering">Loading…</string>
+    <string name="Dialog_Button_OK">OK</string>
+    <string name="Dialog_Button_Cancel">Cancel</string>
+    <string name="Unplayable_Message">Play failed, you want to try again?</string>
+    <string name="mp_unknown_artist">Unknow Artist</string>
+    <string name="mp_unknown_album">Unknow Album</string>
+    <string name="mp_cant_find_lyrics">the lrc can\'t be found</string>
+    <string name="mp_lyrics_tips">***&#160;&#160;&#160;the lrc come from internet，just be reference&#160;&#160;&#160;***</string>
+
+    <string-array name="jazzy_effects">
+        <item>Standard</item>
+        <item>Tablet</item>
+        <item>CubeIn</item>
+        <item>CubeOut</item>
+        <item>FlipVertical</item>
+        <item>FlipHorizontal</item>
+        <item>Stack</item>
+        <item>ZoomIn</item>
+        <item>ZoomOut</item>
+        <item>RotateUp</item>
+        <item>RotateDown</item>
+        <item>Accordion</item>
+    </string-array>
+
+</resources>

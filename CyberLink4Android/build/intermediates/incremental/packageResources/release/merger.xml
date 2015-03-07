@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="/Users/Sri/Documents/DLNA project/CyberLink4Android/res"><file name="ic_launcher" path="/Users/Sri/Documents/DLNA project/CyberLink4Android/res/drawable-hdpi/ic_launcher.png" qualifiers="hdpi-v4" type="drawable"/><file path="/Users/Sri/Documents/DLNA project/CyberLink4Android/res/values/strings.xml" qualifiers=""><string name="app_name">CyberLink4Android</string></file><file path="/Users/Sri/Documents/DLNA project/CyberLink4Android/res/values/styles.xml" qualifiers=""><style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style><style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style></file></source><source path="/Users/Sri/Documents/DLNA project/CyberLink4Android/build/generated/res/rs/release"/><source path="/Users/Sri/Documents/DLNA project/CyberLink4Android/build/generated/res/generated/release"/></dataSet><dataSet config="release"><source path="/Users/Sri/Documents/DLNA project/CyberLink4Android/build-types/release/res"/></dataSet><mergedItems/></merger>

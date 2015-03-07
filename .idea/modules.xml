@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AwesomeDlnaPlayer/AwesomeDlnaPlayer.iml" filepath="$PROJECT_DIR$/AwesomeDlnaPlayer/AwesomeDlnaPlayer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CyberLink4Android/CyberLink4Android.iml" filepath="$PROJECT_DIR$/CyberLink4Android/CyberLink4Android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CyberLinkCore/CyberLinkCore.iml" filepath="$PROJECT_DIR$/CyberLinkCore/CyberLinkCore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DLNA project.iml" filepath="$PROJECT_DIR$/DLNA project.iml" />
+    </modules>
+  </component>
+</project>
+

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/renderer_lists_item_bg"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/ctrl_list_item_name"
+        android:layout_width="fill_parent"
+        android:layout_height="20dp"
+        android:layout_marginLeft="4dp"
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:text="@null"
+        android:textColor="#eeeeee"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/ctrl_list_item_location"
+        android:layout_width="fill_parent"
+        android:layout_height="20dp"
+        android:layout_marginLeft="4dp"
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:text="@null"
+        android:textColor="#eeeeee"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/ctrl_list_item_uuid"
+        android:layout_width="fill_parent"
+        android:layout_height="20dp"
+        android:layout_marginLeft="4dp"
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:text="@null"
+        android:textColor="#eeeeee"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/ctrl_list_item_type"
+        android:layout_width="fill_parent"
+        android:layout_height="20dp"
+        android:layout_marginLeft="4dp"
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:text="@null"
+        android:textColor="#eeeeee"
+        android:textSize="14sp" />
+
+</LinearLayout>
