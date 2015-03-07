@@ -9,13 +9,6 @@
         <dex dex="/Users/Sri/Documents/DLNA project/AwesomeDlnaPlayer/build/intermediates/pre-dexed/debug/classes-1641ea3e408864873a09111e16a011cdd758fa25.jar" />
     </item>
     <item
-        jar="/Users/Sri/Documents/DLNA project/AwesomeDlnaPlayer/build/intermediates/exploded-aar/DLNA project/CyberLink4Android/unspecified/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="5de731ea1d187b1ad4b6e9c5ee0972ebde76180b">
-        <dex dex="/Users/Sri/Documents/DLNA project/AwesomeDlnaPlayer/build/intermediates/pre-dexed/debug/classes-11fe1985a8ba4da8daca6225d6929ad1608dfc77.jar" />
-    </item>
-    <item
         jar="/Users/Sri/Documents/DLNA project/AwesomeDlnaPlayer/libs/nineoldandroids-2.4.0.jar"
         jumboMode="false"
         revision="21.1.2"
