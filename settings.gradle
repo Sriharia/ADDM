@@ -1,3 +1,2 @@
-include ':CyberLink4Android'
 include ':AwesomeDlnaPlayer'
 include ':CyberLinkCore'

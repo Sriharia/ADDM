@@ -10,7 +10,6 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/AwesomeDlnaPlayer" />
-            <option value="$PROJECT_DIR$/CyberLink4Android" />
             <option value="$PROJECT_DIR$/CyberLinkCore" />
           </set>
         </option>
